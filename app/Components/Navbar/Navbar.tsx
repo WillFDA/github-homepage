@@ -6,7 +6,7 @@ import ProductNav from "./ProductNav";
 type Props = {};
 
 const Navbar = (props: Props) => {
-  const [showNav, setShowNav] = useState(false);
+  const [showNav, setShowNav] = useState<Boolean>(false);
   return (
     <Container>
       <div className="text-white bg-transparent py-5">
