@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 
-import NavList2 from "./NavUtils/Navlist2";
 import Navlist from "./NavUtils/Navlist";
 import navListData from "./NavLinksData";
 type Props = {};
