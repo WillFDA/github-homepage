@@ -3,6 +3,7 @@ import Container from "@/app/Container";
 import React, { useState } from "react";
 import ProductNav from "./ProductNav";
 import SolutionsNav from "./SolutionsNav";
+import OpenSourceNav from "./OpenSourceNav";
 
 type Props = {};
 
@@ -72,6 +73,7 @@ const Navbar = (props: Props) => {
                 <ul className="flex lg:items-center lg:space-x-2 max-lg:flex-col max-lg:text-neutral-700 max-lg:text-xl max-lg:font-medium max-lg:space-y-6 max-lg:h-auto overflow-y-auto">
                   <ProductNav />
                   <SolutionsNav />
+                  <OpenSourceNav />
                 </ul>
               </nav>
             </div>
