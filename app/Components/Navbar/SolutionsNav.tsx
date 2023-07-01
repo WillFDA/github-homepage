@@ -4,9 +4,11 @@ import React, { useState } from "react";
 import Navlist from "./NavUtils/Navlist";
 import { navListData, navListData2 } from "./NavLinksData";
 import Navlist2 from "./NavUtils/NavList2";
+import { link } from "fs";
+
 type Props = {};
 
-const ProductNav = (props: Props) => {
+const SolutionsNav = (props: Props) => {
   const [show, setShow] = useState(false);
 
   const handleOnclick = () => {
@@ -26,6 +28,7 @@ const ProductNav = (props: Props) => {
       setShow(false);
     }
   };
+
   return (
     <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <button
@@ -35,7 +38,7 @@ const ProductNav = (props: Props) => {
           show ? "lg:text-neutral-300" : ""
         }`}
       >
-        Product
+        Solutions
         <svg
           opacity="0.5"
           aria-hidden="true"
@@ -53,39 +56,28 @@ const ProductNav = (props: Props) => {
         </svg>
       </button>
       <div
-        className={`relative lg:absolute lg:flex -ml-5 bg-white rounded-md lg:py-4 py-2 transition ease-in duration-150 ${
-          show ? "opacity-100 " : "opacity-0 invisible max-lg:hidden"
+        className={`relative lg:absolute -ml-5 bg-white rounded-md lg:py-4 p-6 w-[300px] transition ease-in duration-300 ${
+          show ? "opacity-100" : "opacity-0 hidden"
         }`}
       >
-        <div className="lg:px-4 lg:border-r-[1px] mb-4 lg:mb-0 lg:pr-10">
-          <ul className="max-lg:pl-6">
-            {navListData.map((item, index) => {
-              return (
-                <li key={`${index} + 'li'`}>
-                  <Navlist
-                    main={item.main}
-                    submain={item.submain}
-                    path={item.path}
-                    path2={item.path2}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className="lg:px-8 lg:pr-20 py-2 max-lg:pl-6">
-          <span className="my-1 text-neutral-800 font-semibold">Explore</span>
-          <ul>
-            <li className="text-neutral-500 hover:text-blue-500 py-2">
-              <a href="">All Features</a>
+        <div className="lg:border-b-[1px] mb-4 pb-4 pt-4 w-full">
+          <span className="text-neutral-800 font-semibold text-base">For</span>
+          <ul className="text-sm text-neutral-500 mt-1 w-full">
+            <li>
+              <a className="block py-2 hover:text-blue-600" href="">
+                Entreprise
+              </a>
             </li>
-            {navListData2.map((item, index) => {
-              return (
-                <li key={index} className="py-2">
-                  <Navlist2 main={item.main} path={item.path} />
-                </li>
-              );
-            })}
+            <li>
+              <a className="block py-2 hover:text-blue-600" href="">
+                Teams
+              </a>
+            </li>
+            <li>
+              <a className="block py-2 hover:text-blue-600" href="">
+                Startups
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -93,4 +85,4 @@ const ProductNav = (props: Props) => {
   );
 };
 
-export default ProductNav;
+export default SolutionsNav;
